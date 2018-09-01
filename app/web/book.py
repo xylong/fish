@@ -16,7 +16,7 @@ def search():
     '''
     form = SearchForm(request.args)
     if not form.validate():
-        return 'failed'
+        return jsonify(form.errors)
 
     q = form.q.data.strip()
     page = form.page.data
