@@ -7,10 +7,6 @@ def env(key, default=None):
     '''
     if default is not None:
         return default
-    import os
-    if not os.path.exists('.env'):
-        exit('env not found')
-
     return [v for v in open('.env') if key in v][0].split('=')[1]
 
 def is_isbn_or_key(word):
