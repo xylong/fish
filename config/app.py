@@ -1,5 +1,5 @@
-from app.lib.helper import env
+import config
 
-DEBUG = env('DEBUG')
+DEBUG = config.os.environ.get('DEBUG')
 
-PRE_PAGE = env('PRE_PAGE', 15)
+PRE_PAGE = config.os.environ.get('PRE_PAGE')

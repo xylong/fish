@@ -1,4 +1,4 @@
+from dotenv import load_dotenv, find_dotenv
 import os
 
-if not os.path.exists('.env'):
-    exit('file .env not found')
+load_dotenv(find_dotenv())

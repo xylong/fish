@@ -1,5 +1,4 @@
-from app.lib.helper import env
+import config
 
-SQLALCHEMY_DATABASE_URI = 'mysql+cymysql://root:{root}@localhost:{port}/{dbname}'.format(root=env('DB_USERNAME'),
-                                                                                         port=env('DB_PORT'),
-                                                                                         dbname=env('DB_DATABASE'))
+SQLALCHEMY_TRACK_MODIFICATIONS = config.os.environ.get('SQLALCHEMY_TRACK_MODIFICATIONS')
+SQLALCHEMY_DATABASE_URI = config.os.environ.get('SQLALCHEMY_DATABASE_URI')

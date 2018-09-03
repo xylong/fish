@@ -1,14 +1,3 @@
-def env(key, default=None):
-    '''
-    读取env配置
-    :param key: 字段
-    :param default: 值
-    :return: 值
-    '''
-    if default is not None:
-        return default
-    return [v for v in open('.env') if key in v][0].split('=')[1]
-
 def is_isbn_or_key(word):
     '''
     判断word是isbn号还是查询关键字key
