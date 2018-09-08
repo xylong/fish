@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {{ data.sex | default('女') }}
+    {% set msg = get_flashed_messages() %}
+{{msg}}
+</body>
+</html>
