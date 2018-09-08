@@ -33,3 +33,7 @@ class YuShuBook:
 
     def calculate_start(self, page):
         return (page - 1) * int(current_app.config['PRE_PAGE'])
+
+    @property
+    def first(self):
+        return self.books[0] if self.total >= 1 else None

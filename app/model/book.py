@@ -1,7 +1,6 @@
 from sqlalchemy import Column, Integer, String
-from flask_sqlalchemy import SQLAlchemy
 
-db = SQLAlchemy()
+from app.model.base import db
 
 
 class Book(db.Model):
