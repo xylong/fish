@@ -5,9 +5,10 @@ db = SQLAlchemy()
 
 
 class Base(db.Model):
-    '''
-    基类模型
-    '''
     __abstract__ = True
-    # 是否删除
     status = Column(SmallInteger, default=1)
+
+    def set_attrs(self, attrs_dict):
+        for key, value in attrs_dict.items():
+            if hasattr(self, key) and key != 'id':
+                setattr(self, key, value)
