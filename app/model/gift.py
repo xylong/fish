@@ -1,10 +1,10 @@
 from sqlalchemy import Column, Integer, Boolean, ForeignKey, String
 from sqlalchemy.orm import relationships
 
-from app.model.base import db
+from app.model.base import Base
 
 
-class Gift(db.Model):
+class Gift(Base):
     '''
     🎁
     '''
