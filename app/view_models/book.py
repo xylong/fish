@@ -7,6 +7,8 @@ class BookViewModel:
         self.image = book['image']
         self.price = book['price']
         self.summary = book['summary']
+        self.pubdate = book['pubdate']
+        self.binding = book['binding']
         self.pages = book['pages']
 
     @property

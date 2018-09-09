@@ -1,4 +1,4 @@
-from flask import current_app, flash
+from flask import current_app, flash, redirect, url_for
 from flask_login import login_required, current_user
 
 from app.model.base import db
@@ -24,6 +24,7 @@ def save_to_gifts(isbn):
             current_user.beans += float(current_app.config['BEANS_UPLOAD_ONE_BOOK'])
     else:
         flash('这本书已添加至赠送清单或已存在心愿清单')
+    return redirect(url_for('web.book_detail', isbn=isbn))
 
 
 @web.route('/gifts/<gid>/redraw')
